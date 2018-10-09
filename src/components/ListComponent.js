@@ -37,13 +37,13 @@ export class ListComponent extends Component {
 
         return (
             <div style={{padding:'50px 0'}}>
-                <MovieForm movieReady={movie => this.addMovieToArray(movie)}/>
-                <button onClick={this.toggleMovies}>{this.state.enableMovies ? 'Disable':'Enable'} Movies</button>
-                {this.state.enableMovies || 
-                    <div>
-                        <div style={{background:"blue", width:50, height:50}} onClick={()=> this.addMovieToArray(GRAN_TORINO)}></div>
-                        {this.state.movies.map((e,i) => <Movie key={e.title} onDelete={()=>this.deleteMovieByIndex(i)} {...e}/>)}
-                    </div>
+              <MovieForm movieReady={movie => this.addMovieToArray(movie)}/>
+              <button onClick={this.toggleMovies}>{this.state.enableMovies ? 'Disable':'Enable'} Movies</button>
+              {this.state.enableMovies ||
+                <div>
+                  <div style={{background:"blue", width:100, height:50, marginLeft: 200, color:'white'}} onClick={()=> this.addMovieToArray(GRAN_TORINO)}>Add Gran Torino</div>
+                  {this.state.movies.map((e,i) => <Movie key={e.title} onDelete={()=>this.deleteMovieByIndex(i)} {...e}/>)}
+                </div>
                 }
             </div>
         )

@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 
-export const Header = ({ children}) => {
+export const Header = (props) => {
+  console.log(props);
     return (
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -15,7 +16,7 @@ export const Header = ({ children}) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {children}
+            {props.children}
           </a>
         </header>
     )
